@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Seller | Flipkart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #494646;
+            margin: 0;
+            padding: 0;
+            animation: visibility-effect 3s ease-in-out forwards;
+        }
+
+        @keyframes visibility-effect {
+            0% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(to right, green, red, gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 72px;
+            width: 135px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-container .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-container input {
+            padding: 10px 10px 10px 40px; 
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            width: 100%;
+            box-sizing: border-box; 
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        section {
+            padding-top: 80px;  
+            padding: 20px;
+            color: #fff;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-image: url('../images/slid_icon_1.gif');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-content {
+            color: #fff;
+            text-align: center;
+            animation: slideIn 1s ease-out;
+        }
+
+        .banner-content h1, .banner-content p {
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        .banner-content p {
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .become-seller {
+            background-color: #464346;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .become-seller h2 {
+            margin-top: 0;
+            color: #d17910;
+        }
+
+        .become-seller form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .become-seller form label {
+            margin-bottom: 5px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .become-seller form input, .become-seller form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .become-seller form button {
+            background-color: #d17910;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .become-seller form button:hover {
+            background-color: #b5670a;
+        }
+        footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #160101;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html"><img src="../images/flipkart-logo.png" alt="Flipkart Logo"></a>
+        </div>
+        <div class="search-container">
+            <button class="search-icon"><span class="fa fa-search"></span></button>
+            <input type="text" placeholder="Search for Products, Brands and More">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Login.html" class="fa fa-user"><span>Login</span></a></li>
+                <li><a href="cart.html" class="fa-solid fa-cart-shopping"><span>Cart</span></a></li>
+                <li><a href="become_a_saller.html" class="fa-solid fa-shop"><span>Become a Seller</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="banner">
+            <div class="banner-content">
+                <h1>Become a Seller</h1>
+                <p>Join us and start selling your products to a vast customer base.</p>
+            </div>
+        </div>
+        <div class="become-seller">
+            <h2>Seller Registration Form</h2>
+            <form action="#" method="post">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>GROUP COMPANIES</h3>
+                <ul>
+                    <li><a href="#">Myntra</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONSUMER POLICY</h3>
+                <ul>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Grievance Redressal</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Mail Us:</h3>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103, Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <p>Telephone: 044-45614700 / 044-67415800</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h3>Social</h3>
+           
+        </div>
+        <div class="address">
+            <h3>Registered Office Address:</h3>
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103, Karnataka, India</p>
+            <p>CIN : U51109KA2012PTC066107</p>
+            <p>Telephone: 044-45614700 / 044-67415800</p>
+        </div>
+    </footer>
+</body>
+</html>

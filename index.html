@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+      <style>
+        @media  screen and (max-width:768) {
+            .banner_a{
+                position: relative;
+                left: 271px;
+            }
+            
+        }
+        @media  screen and (max-width:768) {
+            .header{
+                position: relative;
+                left: 271px;
+            }
+            
+        }
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #494646;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, green, red, gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+body{
+      animation: visibility-effect 3s ease-in-out forwards;
+    }
+    @keyframes visibility-effect{
+      0%{
+        opacity: 0.1;
+      }
+      100%{
+        opacity: 9;
+      } 
+    }
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, green, red, gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 10px 20px; 
+    box-sizing: border-box;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 72px;
+    width: 135px;
+}
+
+.search-bar {
+    position: relative;
+    width: 300px; 
+}
+
+.search-bar input {
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-bar .search-icon {
+    position: absolute;
+    left: -5px;
+    top: -3%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; 
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+.banner {
+    position: relative;
+    width: 47%;
+    height: 300px;
+    background-image: url(bass/images/slid_icon_1.gif);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner1 {
+    position: relative;
+    width: 86%;
+    height: 300px;
+    background-image: url(bass/images/slid_icon_2.png);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner2 {
+    position: relative;
+    width: 55%;
+    height: 300px;
+    background-image: url(bass/images/slid_icon_3.gif);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-content {
+    color: #fff;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+.banner-content h1 {
+    margin: 0;
+    font-size: 3rem;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+.banner-content p {
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+section {
+    padding-top: 75px;
+    /* display: flex; */
+}
+span.fa.fa-user {
+    border: 2px groove;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+nav {
+    margin-right: 157px;
+}
+.product{
+    border: 2px solid;
+    width: 111px;
+    height: 111px;
+    border-radius: 102px;
+    background-color: #464346;
+}
+
+.product:hover{
+    box-shadow: 0px 1px 17px 20px #ffffff;
+    position: relative;
+    top: 16px;
+    background-color: #d17910;
+}
+
+section>.product_deatil>.product>a>img:hover{
+    box-shadow:1px 1px 20px 7px;
+}
+section>.product_deatil>.product>a>img{
+    width: 110px;
+    position: relative;
+    left:0px ;
+    top: 4px;
+    height: 107px;
+    border-radius: 74px;
+}
+
+section>.product_deatil>.product>h3{
+    position: relative;
+    left: 23px;
+}
+.banner_a{
+    display: flex;
+}
+.product_deatil{
+    display: flex;
+    padding-top: 10px;
+    justify-content: space-evenly;
+}
+.best_deals_box {
+    background-color: white;
+    position: relative;
+    top: 36px;
+    height: 448px;
+    /* display: flex; */
+    /* font-size: 25px; */
+    /* align-content: center; */
+    /* justify-content: flex-start; */
+}
+
+h3.best_deals {
+    font-size: 28px;
+    position: relative;
+    top: 8px;
+}
+a{
+    text-decoration: none;
+}
+.phone_deals {
+    border: 2px solid;
+    height: 293px ;
+}
+.product-card {
+    perspective: 1000px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card {
+    width: 203px;
+    height: 294px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    background-color: teal;
+}
+
+.card h2 {
+    color: red;
+    font-size: 17px;
+    position: relative;
+    top: 112px;
+}
+
+.card:hover {
+    transform: rotatey(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden; 
+    box-sizing: border-box; 
+}
+
+.front img {
+    width: 163%; 
+    position: absolute;
+    left: -73px;
+    height: auto; 
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box; 
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #fafafa;
+}
+
+.front h2, .front p {
+    margin: 0; 
+}
+
+.front p {
+    position: relative;
+    top: 121px;
+}
+
+.card h2 {
+    margin: 0; 
+}
+
+
+footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #160101;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="bass/images/flipkart-logo.png" alt="Flipkart Logo"></a>
+        </div>
+        <div class="search-bar">
+            <button class="search-icon"><span class="fa fa-search"></span></button>
+            <input type="text" placeholder="Search for Products, Brands and More">
+        </div>
+        <nav>
+            <ul>
+                <li><a href=".//bass/web_site_pages/Login.html" class="fa fa-user"><span class="fauser">Login</span></a></li>
+                <li><a href=".//bass/web_site_pages/cart.html" class="fa-solid fa-cart-shopping"><span class="cart">Cart</span></a></li>
+                <li><a href="./bass/web_site_pages/become_a_saller.html" class="fa-solid fa-shop"><span class="Become_a_Seller">Become a Seller</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="banner_a">
+        <div class="banner">
+            <div class="banner-content"  >
+                <h1>Special Offer</h1>
+                <p>Get the best deals on our new products! </p>
+                <button>Shop Now</button>
+            </div>
+        </div>
+        <div class="banner1">
+            <div class="banner-content"  >
+                <h1>Special Offer</h1>
+                <p>Get the best deals on our new products! </p>
+                <button>Shop Now</button>
+            </div>
+            <div class="banner2">
+                <div class="banner-content"  >
+                    <h1>Special Offer</h1>
+                    <p>Get the best deals on our new products! </p>
+                    <button>Shop Now</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <marquee><a href=""><img src=".//bass/images/h3_slid.png" alt=""></a><a href=""><img src="./bass/images/h3_slid_1.png" alt=""></a><a href=""><img src="./bass/images/h3_slid_2.png" alt=""></a></marquee>
+    <div class="product_deatil">
+        <div class="product">
+            <a href="ptfo.html"><img src="bass/images/Grocery_index.gif" alt="Product 1"></a>
+            <h3>Grocery</h3>
+        </div>
+        <div class="product">
+          <a href=".//bass/web_site_pages/phones.html"><img src="bass/images/Mobile_index.gif" alt="Product 2"></a> 
+            <h3>Mobile</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Fshion_index.jpeg" alt="Product 3"></a>
+            <h3>Fshion</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Electronice_index.gif" alt="Product 1"></a>
+            <h3>Electronice</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Home_&_Furniture_index.gif" alt="Product 2"></a>
+            <h3>Home & Furniture</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Appliances_index.gif"alt="Product 3"></a>
+            <h3>Appliances</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/world-travel-5696_256.gif" alt="Product 1"></a>
+            <h3>Travel</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Toys_index.gif" alt="Product 2"></a>
+            <h3>Toys & more</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/motorcycles-big-bikes_index.gif"alt="Product 3"></a>
+            <h3>Two wheelers</h3>
+        </div>
+        <div class="product">
+            <a href="#"><img src="bass/images/Fshion_index.jpeg" alt="Product 1"></a>
+            <h3>Fshion</h3>
+        </div>
+        
+        </div>
+    </div>
+    <div class="best_deals_box">
+        <h3 class="best_deals">
+           <a href="#">Today  Best Deals    </a> 
+        </h3>
+    <div class="phone_deals">
+        <div class="product-card">
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front">
+                    <img src="./bass/images/bike_index.gif" alt="Product Image">
+                    <h2>Product Name</h2>
+                    <p>$199.99</p>
+                </div>
+                <div class="back">
+                    <h2>More Details</h2>
+                    <p>Detailed description of the product.</p>
+                </div>
+            </div>
+        </div> 
+        </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>GROUP COMPANIES</h3>
+                <ul>
+                    <li><a href="#">Myntra</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONSUMER POLICY</h3>
+                <ul>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Grievance Redressal</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Mail Us:</h3>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103, Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <p>Telephone: 044-45614700 / 044-67415800</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h3>Social</h3>
+           
+        </div>
+        <div class="address">
+            <h3>Registered Office Address:</h3>
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103, Karnataka, India</p>
+            <p>CIN : U51109KA2012PTC066107</p>
+            <p>Telephone: 044-45614700 / 044-67415800</p>
+        </div>
+    </footer>
+            </div>
+        
+    </body>
+</html>
+
+        
+

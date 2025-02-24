@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Demo - Product Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            animation: visibility-effect 3s ease-in-out forwards;
+        }
+
+        @keyframes visibility-effect {
+            0% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(to right, green, red, gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 72px;
+            width: 135px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-container .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-container input {
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-container input:focus {
+            border-color: #287bff;
+            outline: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+            color: #287bff;
+        }
+
+        section {
+            padding-top: 80px;
+        }
+
+        .banner, .banner1, .banner2 {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: banner-animation 1s ease-out;
+        }
+
+        .banner { background-image: url(../images/phone1.png); }
+        .banner1 { background-image: url(../images/phone2.png); }
+        .banner2 { background-image: url(../images/phone3.png); }
+
+        @keyframes banner-animation {
+            from { opacity: 0; transform: scale(1.05); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .banner-content {
+            color: #fff;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .banner-content h1, .banner-content p {
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        .banner-content p {
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: linear-gradient(135deg, #ffffff, #f7f7f7);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            width: 100%;
+            max-width: 200px;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card img:hover {
+            transform: scale(1.1);
+        }
+
+        .product-card h1 {
+            font-size: 16px;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .product-card p {
+            color: #287bff;
+            font-size: 14px;
+            margin: 0 0 10px;
+        }
+
+        .product-card button {
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #287bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #160101;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html"><img src="../images/flipkart-logo.png" alt="Flipkart Logo"></a>
+        </div>
+        <div class="search-container">
+            <button class="search-icon"><span class="fa fa-search"></span></button>
+            <input type="text" placeholder="Search for Products, Brands and More">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Login.html" class="fa fa-user"><span>Login</span></a></li>
+                <li><a href="cart.html" class="fa-solid fa-cart-shopping"><span>Cart</span></a></li>
+                <li><a href="become_a_saller.html" class="fa-solid fa-shop"><span>Become a Seller</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="banner">
+            <div class="banner-content">
+                <h1></h1>
+                <p></p>
+            </div>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="../images/Samsung-Galaxy-S23-Ultra.png" alt="Product Image 1">
+                <h1>Samsung Galaxy S23 Ultra</h1>
+                <p>$777.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Samsung-Galaxy-A54-review.png" alt="Product Image 2">
+                <h1>Samsung Galaxy A54 </h1>
+                <p>$299.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Samsung-Galaxy-S23_review.png" alt="Product Image 3">
+                <h1>Samsung Galaxy S23 </h1>
+                <p>$759.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Samsung Galaxy A34 review.png" alt="Product Image 4">
+                <h1>Samsung Galaxy A34 </h1>
+                <p>$286.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Samsung Galaxy A14 pictures.png" alt="Product Image 5">
+                <h1>Samsung Galaxy A14 </h1>
+                <p>$792.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Apple iPhone 15 Pro Max review.png" alt="Product Image 6">
+                <h1>Apple iPhone 15 Pro Max </h1>
+                <p>$1599.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Tecno Spark 10 Pro review.png" alt="Product Image 7">
+                <h1>Tecno Spark 10 Pro </h1>
+                <p>$539.99</p>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="../images/Xiaomi Redmi 12 .png" alt="Product Image 8">
+                <h1>Xiaomi Redmi 12 </h1>
+                <p>$219.99</p>
+                <button>Buy Now</button>
+            </div>
+          
+            <div class="product-card">
+                <img src="../images/Poco X5 Pro .png" alt="Product Image 9">
+                <h1>Poco X5 Pro </h1>
+                <p>$239.99</p>
+                <button>Buy Now</button>
+            </div>
+            
+            <div class="product-card">
+                <img src="../images/Samsung Galaxy A14 pictures.png" alt="Product Image 10">
+                <h1>Samsung Galaxy A14 5G </h1>
+                <p>$449.99</p>
+                <button>Buy Now</button>
+            </div>
+           
+            <div class="product-card">
+                <img src="../images/OnePlus 11.png" alt="Product Image 11">
+                <h1>OnePlus 11</h1>
+                <p>$325.99</p>
+                <button>Buy Now</button>
+            </div>
+           
+            <div class="product-card">
+                <img src="../images/Poco F5Redmi Note 12.png" alt="Product Image 12">
+                <h1>Poco F5/Redmi Note 12</h1>
+                <p>$319.99</p>
+                <button>Buy Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>GROUP COMPANIES</h3>
+                <ul>
+                    <li><a href="#">Myntra</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONSUMER POLICY</h3>
+                <ul>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Grievance Redressal</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Mail Us:</h3>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103, Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <p>Telephone: 044-45614700 / 044-67415800</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h3>Social</h3>
+           
+        </div>
+        <div class="address">
+            <h3>Registered Office Address:</h3>
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103, Karnataka, India</p>
+            <p>CIN : U51109KA2012PTC066107</p>
+            <p>Telephone: 044-45614700 / 044-67415800</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Cart Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #494646;
+            margin: 0;
+            padding: 0;
+            animation: visibility-effect 3s ease-in-out forwards;
+        }
+
+        @keyframes visibility-effect {
+            0% { opacity: 0.1; }
+            100% { opacity: 1; }
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(to right, green, red, gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 72px;
+            width: 135px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .search-container .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .search-container .search-icon:hover {
+            color: #287bff;
+        }
+
+        .search-container input {
+            padding: 10px 10px 10px 40px; 
+            border: 1px solid #ccc;
+            border-radius: 24px;
+            width: 100%;
+            box-sizing: border-box; 
+            transition: border-color 0.3s ease;
+        }
+
+        .search-container input:focus {
+            border-color: #287bff;
+            outline: none;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+        section {
+            padding-top: 80px; 
+            padding: 20px;
+        }
+
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 7%;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cart-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .cart-item-details {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .cart-item-details h2 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .cart-item-details p {
+            margin: 10px 0;
+            color: #287bff;
+            font-size: 16px;
+        }
+
+        .cart-item-details .quantity {
+            margin-top: 10px;
+        }
+
+        .cart-item-details .quantity label {
+            font-weight: bold;
+        }
+
+        .cart-item-details .quantity input {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .cart-item-details .quantity input:focus {
+            border-color: #287bff;
+            outline: none;
+        }
+
+        .cart-item-details .remove-button {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cart-item-details .remove-button:hover {
+            background-color: #c9302c;
+            transform: scale(1.05);
+        }
+
+        .cart-summary {
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cart-summary h2 {
+            margin: 0;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .cart-summary p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #287bff;
+        }
+
+        .cart-summary button {
+            background-color: #287bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cart-summary button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        footer {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+
+.footer-section ul {
+    list-style-type: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #160101;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../index.html"><img src="../images/flipkart-logo.png" alt="Flipkart Logo"></a>
+        </div>
+        <div class="search-container">
+            <button class="search-icon"><span class="fa fa-search"></span></button>
+            <input type="text" placeholder="Search for Products, Brands and More">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="Login.html" class="fa fa-user"><span>Login</span></a></li>
+                <li><a href="cart.html" class="fa-solid fa-cart-shopping"><span>Cart</span></a></li>
+                <li><a href="become_a_saller.html" class="fa-solid fa-shop"><span>Become a Seller</span></a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <div class="cart-container">
+            <div class="cart-item">
+                <img src="../images/Apple iPhone 15 Pro Max review.png" alt="Product Image 1">
+                <div class="cart-item-details">
+                    <h2>Apple iPhone 15 Pro Max</h2>
+                    <p>$1599.99</p>
+                    <div class="quantity">
+                        <label for="quantity1">Quantity:</label>
+                        <input type="number" id="quantity1" name="quantity1" value="1" min="1">
+                    </div>
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../images/OnePlus 11.png" alt="Product Image 2">
+                <div class="cart-item-details">
+                    <h2>OnePlus 11</h2>
+                    <p>$325.99</p>
+                    <div class="quantity">
+                        <label for="quantity2">Quantity:</label>
+                        <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+                    </div>
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+            <div class="cart-item">
+                <img src="../images/Samsung Galaxy A14 5G .png" alt="Product Image 3">
+                <div class="cart-item-details">
+                    <h2>Samsung Galaxy A14 5G</h2>
+                    <p>$449.99</p>
+                    <div class="quantity">
+                        <label for="quantity3">Quantity:</label>
+                        <input type="number" id="quantity3" name="quantity3" value="1" min="1">
+                    </div>
+                    <button class="remove-button">Remove</button>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <h2>Cart Summary</h2>
+                <p>Total Items: 3</p>
+                <p>Total Price: $2375.97</p>
+                <button>Checkout</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>GROUP COMPANIES</h3>
+                <ul>
+                    <li><a href="#">Myntra</a></li>
+                    <li><a href="#">Cleartrip</a></li>
+                    <li><a href="#">Shopsy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONSUMER POLICY</h3>
+                <ul>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Grievance Redressal</a></li>
+                    <li><a href="#">EPR Compliance</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Mail Us:</h3>
+                <p>Flipkart Internet Private Limited,</p>
+                <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+                <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+                <p>Bengaluru, 560103, Karnataka, India</p>
+                <p>CIN : U51109KA2012PTC066107</p>
+                <p>Telephone: 044-45614700 / 044-67415800</p>
+            </div>
+        </div>
+        <div class="footer-social">
+            <h3>Social</h3>
+           
+        </div>
+        <div class="address">
+            <h3>Registered Office Address:</h3>
+            <p>Flipkart Internet Private Limited,</p>
+            <p>Buildings Alyssa, Begonia & Clove Embassy Tech Village,</p>
+            <p>Outer Ring Road, Devarabeesanahalli Village,</p>
+            <p>Bengaluru, 560103, Karnataka, India</p>
+            <p>CIN : U51109KA2012PTC066107</p>
+            <p>Telephone: 044-45614700 / 044-67415800</p>
+        </div>
+    </footer>
+</body>
+</html>
